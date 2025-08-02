@@ -135,6 +135,9 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really	<- Disabled; bandits got stuck with class selection
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
+#define CTAG_WRETCH			"CAT_WRETCH"		// Wretch classes untethered from adventurer
+#define CTAG_LSKELETON		"CAT_LSKELETON"		// Lich Fortified Skeleton classes
+#define CTAG_NSKELETON		"CAT_NSKELETON"		// Necromancer Greater Skeleton classes
 #define CTAG_MERCENARY		"CAT_MERCENARY"
 #define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_FORGARRISON	"CAT_FORGARRISON"

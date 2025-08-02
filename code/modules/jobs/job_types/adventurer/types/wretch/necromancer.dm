@@ -2,31 +2,31 @@
 	name = "Necromancer"
 	tutorial = "You have been ostracized and hunted by society for your dark magics and perversion of life."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/wretch/necromancer
+	allowed_races = RACES_PLAYER_ALL
+	outfit = /datum/outfit/job/wretch/necromancer
 	category_tags = list(CTAG_WRETCH)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_OUTLANDER, TRAIT_ZOMBIE_IMMUNE, TRAIT_MAGEARMOR, TRAIT_GRAVEROBBER, TRAIT_OUTLAW, TRAIT_ARCYNE_T3, TRAIT_HERESIARCH)
 
 
-/datum/outfit/job/roguetown/wretch/necromancer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wretch/necromancer/pre_equip(mob/living/carbon/human/H)
 	H.mind.current.faction += "[H.name]_faction"
 	H.set_patron(/datum/patron/inhumen/zizo)
-	head = /obj/item/clothing/head/roguetown/roguehood/black
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	beltl = /obj/item/rogueweapon/huntingknife
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/ruby
+	head = /obj/item/clothing/head/roguehood/black
+	shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+	pants = /obj/item/clothing/under/heavy_leather_pants
+	wrists = /obj/item/clothing/wrists/bracers/leather/heavy
+	shirt = /obj/item/clothing/suit/armor/gambeson/heavy
+	armor = /obj/item/clothing/suit/shirt/robe/black
+	belt = /obj/item/storage/belt/leather
+	beltr = /obj/item/reagent_containers/glass/bottle/manapot
+	neck = /obj/item/clothing/neck/gorget
+	beltl = /obj/item/weapon/huntingknife
+	backl = /obj/item/storage/backpack/satchel
+	backr = /obj/item/weapon/woodstaff/ruby
 	backpack_contents = list(
 		/obj/item/spellbook_unfinished/pre_arcyne = 1,
 		/obj/item/roguegem/amethyst = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/storage/belt/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/necro_relics/necro_crystal = 2,
 		)

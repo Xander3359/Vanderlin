@@ -2,31 +2,31 @@
 	name = "Poacher"
 	tutorial = "You have rejected society and its laws, choosing life in the wilderness instead. Simple thieving highwayman or freedom fighter, you take from those who have and give to the have-nots. Fancy, how the latter includes yourself!"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/wretch/poacher
+	allowed_races = RACES_PLAYER_ALL
+	outfit = /datum/outfit/job/wretch/poacher
 	category_tags = list(CTAG_WRETCH)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_OUTLANDER, TRAIT_DODGEEXPERT, TRAIT_OUTLAW, TRAIT_WOODSMAN, TRAIT_OUTDOORSMAN, TRAIT_HERESIARCH)
 
 
-/datum/outfit/job/roguetown/wretch/poacher/pre_equip(mob/living/carbon/human/H)
-	head = /obj/item/clothing/head/roguetown/roguehood/darkgreen
-	mask = /obj/item/clothing/mask/rogue/wildguard
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
+/datum/outfit/job/wretch/poacher/pre_equip(mob/living/carbon/human/H)
+	head = /obj/item/clothing/head/roguehood/darkgreen
+	mask = /obj/item/clothing/mask/wildguard
+	pants = /obj/item/clothing/under/heavy_leather_pants
+	armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/darkgreen
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	backl = /obj/item/storage/backpack/rogue/satchel
-	belt = /obj/item/storage/belt/rogue/leather
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
+	shirt = /obj/item/clothing/suit/armor/gambeson
+	backl = /obj/item/storage/backpack/satchel
+	belt = /obj/item/storage/belt/leather
+	neck = /obj/item/clothing/neck/gorget
+	gloves = /obj/item/clothing/gloves/fingerless_leather
+	shoes = /obj/item/clothing/shoes/boots/leather/reinforced
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	beltl = /obj/item/quiver/arrows
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
+	wrists = /obj/item/clothing/wrists/bracers/leather/heavy
 	backpack_contents = list(
 		/obj/item/bait = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/weapon/huntingknife = 1,
+		/obj/item/storage/belt/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rope/chain = 1,
 		)
@@ -55,16 +55,16 @@
 	switch(weapon_choice)
 		if("Dagger")
 			H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
+			beltr = /obj/item/weapon/huntingknife/idagger/steel
 		if("Axe")
 			H.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-			beltr = /obj/item/rogueweapon/stoneaxe/woodcut
+			beltr = /obj/item/weapon/stoneaxe/woodcut
 		if ("Cudgel")
 			H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-			beltr = /obj/item/rogueweapon/mace/cudgel
+			beltr = /obj/item/weapon/mace/cudgel
 		if ("My Bow Is Enough")
 			H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-			head = /obj/item/clothing/head/roguetown/duelhat
+			head = /obj/item/clothing/head/duelhat
 	H.change_stat("endurance", 2)
 	H.change_stat("constitution", 1) // No straight upgrade to perception / speed to not stack one stat too high, but still stronger than MAA Skirm out of town.
 	H.change_stat("perception", 2)

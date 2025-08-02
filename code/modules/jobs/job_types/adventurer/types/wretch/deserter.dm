@@ -2,17 +2,17 @@
 	name = "Deserter"
 	tutorial = "You served a Duchy, once. Be it as a soldier in their armies or a member of their retinue. And then, you left. But it wasn't an ordered retreat, or even dismissal. You made your decision."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/wretch/deserter
-	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
+	allowed_races = RACES_PLAYER_ALL
+	outfit = /datum/outfit/job/wretch/deserter
+	horse = /mob/living/simple_animal/hostile/retaliate/saiga/saigabuck/tame/saddled
 	category_tags = list(CTAG_WRETCH)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_OUTLANDER, TRAIT_OUTLAW, TRAIT_HERESIARCH)
-	
+
 	cmode_music = 'sound/music/combat_bandit.ogg'
-	classes = list("Disgraced" = "You were once a venerated and revered knight - now, a traitor who abandoned your liege. You lyve the lyfe of an outlaw, shunned and looked down upon by society.", 
+	classes = list("Disgraced" = "You were once a venerated and revered knight - now, a traitor who abandoned your liege. You lyve the lyfe of an outlaw, shunned and looked down upon by society.",
 	"Abandoned Post" = "You had your post. You had your duty. Dissatisfied, lacking in morale, or simply thinking yourself better than it. - You decided to walk. Now it follows you everywhere you go.")
 
-/datum/outfit/job/roguetown/wretch/deserter/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wretch/deserter/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_blindness(-3)
 	var/classes = list("Disgraced","Abandoned Post")
@@ -51,7 +51,7 @@
 				"Estoc",
 				"Mace + Shield",
 				"Flail + Shield",
-				"Longsword + Shield", 
+				"Longsword + Shield",
 				"Lucerne",
 				"Battle Axe",
 				"Lance + Kite Shield"
@@ -60,36 +60,36 @@
 			H.set_blindness(0)
 			switch(weapon_choice)
 				if("Estoc")
-					r_hand = /obj/item/rogueweapon/estoc
+					r_hand = /obj/item/weapon/estoc
 					backr = /obj/item/gwstrap
 				if("Longsword + Shield")
-					beltr = /obj/item/rogueweapon/sword/long
-					backr = /obj/item/rogueweapon/shield/tower/metal
+					beltr = /obj/item/weapon/sword/long
+					backr = /obj/item/weapon/shield/tower/metal
 				if("Mace + Shield")
-					beltr = /obj/item/rogueweapon/mace/steel
-					backr = /obj/item/rogueweapon/shield/tower/metal
+					beltr = /obj/item/weapon/mace/steel
+					backr = /obj/item/weapon/shield/tower/metal
 				if("Flail + Shield")
-					beltr = /obj/item/rogueweapon/flail/sflail
-					backr = /obj/item/rogueweapon/shield/tower/metal
+					beltr = /obj/item/weapon/flail/sflail
+					backr = /obj/item/weapon/shield/tower/metal
 				if("Lucerne")
-					r_hand = /obj/item/rogueweapon/eaglebeak/lucerne
+					r_hand = /obj/item/weapon/eaglebeak/lucerne
 					backr = /obj/item/gwstrap
 				if("Battle Axe")
-					backr = /obj/item/rogueweapon/stoneaxe/battle
+					backr = /obj/item/weapon/stoneaxe/battle
 				if("Lance + Kite Shield")
-					r_hand = /obj/item/rogueweapon/spear/lance
-					backr = /obj/item/rogueweapon/shield/tower/metal
+					r_hand = /obj/item/weapon/spear/lance
+					backr = /obj/item/weapon/shield/tower/metal
 			var/helmets = list(
-				"Pigface Bascinet" 	= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface,
-				"Guard Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/guard,
-				"Barred Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/sheriff,
-				"Bucket Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/bucket,
-				"Knight Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/knight,
-				"Visored Sallet"			= /obj/item/clothing/head/roguetown/helmet/sallet/visored,
-				"Armet"				= /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet,
-				"Hounskull Bascinet" 		= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
-				"Etruscan Bascinet" 		= /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan,
-				"Slitted Kettle"		= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
+				"Pigface Bascinet" 	= /obj/item/clothing/head/helmet/bascinet/pigface,
+				"Guard Helmet"		= /obj/item/clothing/head/helmet/heavy/guard,
+				"Barred Helmet"		= /obj/item/clothing/head/helmet/heavy/sheriff,
+				"Bucket Helmet"		= /obj/item/clothing/head/helmet/heavy/bucket,
+				"Knight Helmet"		= /obj/item/clothing/head/helmet/heavy/knight,
+				"Visored Sallet"			= /obj/item/clothing/head/helmet/sallet/visored,
+				"Armet"				= /obj/item/clothing/head/helmet/heavy/knight/armet,
+				"Hounskull Bascinet" 		= /obj/item/clothing/head/helmet/bascinet/pigface/hounskull,
+				"Etruscan Bascinet" 		= /obj/item/clothing/head/helmet/bascinet/etruscan,
+				"Slitted Kettle"		= /obj/item/clothing/head/helmet/heavy/knight/skettle,
 				"None"
 			)
 			var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
@@ -97,27 +97,27 @@
 				head = helmets[helmchoice]
 
 			var/armors = list(
-				"Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine,
-				"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
-				"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,				
-				"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
+				"Brigandine"		= /obj/item/clothing/suit/armor/brigandine,
+				"Coat of Plates"	= /obj/item/clothing/suit/armor/brigandine/coatplates,
+				"Steel Cuirass"		= /obj/item/clothing/suit/armor/plate/half,
+				"Fluted Cuirass"	= /obj/item/clothing/suit/armor/plate/half/fluted,
 			)
 			var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
 			armor = armors[armorchoice]
 			H.change_stat("strength", 2) // Deserter are the knight-equivalence. They get a balanced, straightforward 2 2 3 statspread to endure and overcome.
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
-			gloves = /obj/item/clothing/gloves/roguetown/plate 
-			pants = /obj/item/clothing/under/roguetown/chainlegs
-			neck = /obj/item/clothing/neck/roguetown/bevor
-			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-			wrists = /obj/item/clothing/wrists/roguetown/bracers
-			shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-			belt = /obj/item/storage/belt/rogue/leather/steel
-			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-			backl = /obj/item/storage/backpack/rogue/satchel //gwstraps landing on backr asyncs with backpack_contents
+			gloves = /obj/item/clothing/gloves/plate
+			pants = /obj/item/clothing/under/chainlegs
+			neck = /obj/item/clothing/neck/bevor
+			shirt = /obj/item/clothing/suit/armor/chainmail
+			wrists = /obj/item/clothing/wrists/bracers
+			shoes = /obj/item/clothing/shoes/boots/armor
+			belt = /obj/item/storage/belt/leather/steel
+			beltl = /obj/item/storage/belt/pouch/coins/poor
+			backl = /obj/item/storage/backpack/satchel //gwstraps landing on backr asyncs with backpack_contents
 			backpack_contents = list(
-				/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
+				/obj/item/weapon/huntingknife/idagger/steel/special = 1,
 				/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 				/obj/item/rope/chain = 1,
 				)
@@ -127,32 +127,32 @@
 
 		if("Abandoned Post") // The dreaded MaA Footman / Cavalryman without town-buffs. HORRIFYING. ZOOOOUNDS, EGAAAADS! - Average armory raider equipment, too. Minus the red. Otherwise, a worse Disgraced.
 			to_chat(H, span_warning("You had your post. You had your duty. Dissatisfied, lacking in morale, or simply thinking yourself better than it. - You decided to walk. Now it follows you everywhere you go."))
-			
-			
+
+
 			H.adjust_blindness(-3)
 			var/weapons = list("Warhammer & Shield","Sabre & Shield","Axe & Shield","Billhook","Greataxe","Halberd",)
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			H.set_blindness(0)
 			switch(weapon_choice)
 				if("Warhammer & Shield")
-					beltr = /obj/item/rogueweapon/mace/warhammer
-					backl = /obj/item/rogueweapon/shield/iron
+					beltr = /obj/item/weapon/mace/warhammer
+					backl = /obj/item/weapon/shield/iron
 				if("Sabre & Shield")
-					beltr = /obj/item/rogueweapon/sword/sabre
-					backl = /obj/item/rogueweapon/shield/wood
+					beltr = /obj/item/weapon/sword/sabre
+					backl = /obj/item/weapon/shield/wood
 				if("Axe & Shield")
-					beltr = /obj/item/rogueweapon/stoneaxe/woodcut/steel
-					backl = /obj/item/rogueweapon/shield/iron
+					beltr = /obj/item/weapon/stoneaxe/woodcut/steel
+					backl = /obj/item/weapon/shield/iron
 				if("Billhook")
-					r_hand = /obj/item/rogueweapon/spear/billhook 
+					r_hand = /obj/item/weapon/spear/billhook
 					backl = /obj/item/gwstrap
 				if("Halberd")
-					r_hand = /obj/item/rogueweapon/halberd
-					backl = /obj/item/gwstrap	
-				if("Greataxe")
-					r_hand = /obj/item/rogueweapon/greataxe
+					r_hand = /obj/item/weapon/halberd
 					backl = /obj/item/gwstrap
-			
+				if("Greataxe")
+					r_hand = /obj/item/weapon/greataxe
+					backl = /obj/item/gwstrap
+
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -179,25 +179,25 @@
 			H.change_stat("endurance", 2)
 			H.change_stat("perception", 1)
 
-			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk	
-			pants = /obj/item/clothing/under/roguetown/chainlegs
-			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			cloak = /obj/item/clothing/cloak/stabard/surcoat 
-			wrists = /obj/item/clothing/wrists/roguetown/bracers
-			gloves = /obj/item/clothing/gloves/roguetown/chain 
-			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron 
-			beltl = /obj/item/rogueweapon/mace/cudgel
-			belt = /obj/item/storage/belt/rogue/leather
-			backr = /obj/item/storage/backpack/rogue/satchel
+			shirt = /obj/item/clothing/suit/armor/gambeson
+			armor = /obj/item/clothing/suit/armor/chainmail/hauberk
+			pants = /obj/item/clothing/under/chainlegs
+			neck = /obj/item/clothing/neck/chaincoif
+			cloak = /obj/item/clothing/cloak/stabard/surcoat
+			wrists = /obj/item/clothing/wrists/bracers
+			gloves = /obj/item/clothing/gloves/chain
+			shoes = /obj/item/clothing/shoes/boots/armor/iron
+			beltl = /obj/item/weapon/mace/cudgel
+			belt = /obj/item/storage/belt/leather
+			backr = /obj/item/storage/backpack/satchel
 
-			backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/rope/chain = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/flashlight/flare/torch/lantern/prelit = 1,)
+			backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/weapon/huntingknife/idagger/steel/special = 1, /obj/item/rope/chain = 1, /obj/item/storage/belt/pouch/coins/poor = 1, /obj/item/flashlight/flare/torch/lantern/prelit = 1,)
 			var/helmets = list(
-			"Simple Helmet" 	= /obj/item/clothing/head/roguetown/helmet,
-			"Kettle Helmet" 	= /obj/item/clothing/head/roguetown/helmet/kettle,
-			"Bascinet Helmet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
-			"Sallet Helmet"		= /obj/item/clothing/head/roguetown/helmet/sallet,
-			"Winged Helmet" 	= /obj/item/clothing/head/roguetown/helmet/winged,
+			"Simple Helmet" 	= /obj/item/clothing/head/helmet,
+			"Kettle Helmet" 	= /obj/item/clothing/head/helmet/kettle,
+			"Bascinet Helmet"		= /obj/item/clothing/head/helmet/bascinet,
+			"Sallet Helmet"		= /obj/item/clothing/head/helmet/sallet,
+			"Winged Helmet" 	= /obj/item/clothing/head/helmet/winged,
 			"None"
 			)
 			var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
@@ -205,14 +205,14 @@
 				head = helmets[helmchoice]
 
 			var/masks = list(
-			"Steel Houndmask" 	= /obj/item/clothing/mask/rogue/facemask/steel/hound,
-			"Steel Mask"		= /obj/item/clothing/mask/rogue/facemask/steel,
-			"Wildguard"			= /obj/item/clothing/mask/rogue/wildguard,
+			"Steel Houndmask" 	= /obj/item/clothing/mask/facemask/steel/hound,
+			"Steel Mask"		= /obj/item/clothing/mask/facemask/steel,
+			"Wildguard"			= /obj/item/clothing/mask/wildguard,
 			"None"
 			)
 			var/maskchoice = input("Choose your Mask.", "MASK MASK MASK") as anything in masks // Run from it. MASK. MASK. MASK.
 			if(maskchoice != "None")
-				mask = masks[maskchoice]	
+				mask = masks[maskchoice]
 
 
 
@@ -225,7 +225,7 @@
 	devotion_cost = 0
 	chargedrain = 1
 	chargetime = 15
-	releasedrain = 80 // 
+	releasedrain = 80 //
 	recharge_time = 2 MINUTES
 	miracle = FALSE
 	sound = 'sound/magic/inspire_02.ogg'
@@ -246,7 +246,7 @@
 		if(user.job == "Deserter")
 			if(!(target.job in list("Brotherhood")))
 				to_chat(user, span_alert("I cannot order one not of the brotherhood cause!"))
-				return		
+				return
 		if(target == user)
 			to_chat(user, span_alert("I cannot order myself!"))
 			return
@@ -304,7 +304,7 @@
 		if(user.job == "Deserter")
 			if(!(target.job in list("Brotherhood")))
 				to_chat(user, span_alert("I cannot order one not of the brotherhood cause!"))
-				return		
+				return
 		if(target == user)
 			to_chat(user, span_alert("I cannot order myself!"))
 			return
@@ -329,7 +329,7 @@
 		if(user.job == "Deserter")
 			if(!(target.job in list("Brotherhood")))
 				to_chat(user, span_alert("I cannot order one not of the brotherhood cause!"))
-				return		
+				return
 		if(target == user)
 			to_chat(user, span_alert("I cannot order myself!"))
 			return
@@ -383,7 +383,7 @@
 		if(user.job == "Deserter")
 			if(!(target.job in list("Brotherhood")))
 				to_chat(user, span_alert("I cannot order one not of the brotherhood cause!"))
-				return		
+				return
 		if(target == user)
 			to_chat(user, span_alert("I cannot order myself!"))
 			return

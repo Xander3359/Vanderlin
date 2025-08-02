@@ -2,15 +2,15 @@
 	name = "Outlaw"
 	tutorial = "You're a seasoned criminal known for your heinous acts, your face plastered on wanted posters across the region. A life of theft, robbery, and ill-gotten-gains comes naturally to you."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/wretch/outlaw
+	allowed_races = RACES_PLAYER_ALL
+	outfit = /datum/outfit/job/wretch/outlaw
 	category_tags = list(CTAG_WRETCH)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_OUTLANDER, TRAIT_DODGEEXPERT, TRAIT_OUTLAW, TRAIT_HERESIARCH) //Maybe seperate Marmor and DE between the classes but meh
 	classes = list("Cutpurse" = "You are the person folk fear at night - use your cunning and speed to strike fast and get out with your spoils before anyone notices.",
 					"Marauder"= "You are a brigand and a pillager - you prefer to get your coins with direct means from unfortunate victims.")
 
 
-/datum/outfit/job/roguetown/wretch/outlaw/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wretch/outlaw/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_blindness(-3)
 	var/classes = list("Cutpurse","Marauder")
@@ -20,28 +20,28 @@
 
 		if("Cutpurse")
 			to_chat(H, span_warning("You are the person folk fear at night - use your cunning and speed to strike fast and get out with your spoils before anyone notices."))
-			head = /obj/item/clothing/head/roguetown/helmet/kettle
-			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
+			head = /obj/item/clothing/head/helmet/kettle
+			pants = /obj/item/clothing/under/heavy_leather_pants
+			armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 			cloak = /obj/item/clothing/cloak/raincloak/mortus
-			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+			shirt = /obj/item/clothing/suit/armor/gambeson
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-			backl = /obj/item/storage/backpack/rogue/satchel
-			belt = /obj/item/storage/belt/rogue/leather
-			gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-			shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-			neck = /obj/item/clothing/neck/roguetown/gorget
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-			mask = /obj/item/clothing/mask/rogue/ragmask/black
+			backl = /obj/item/storage/backpack/satchel
+			belt = /obj/item/storage/belt/leather
+			gloves = /obj/item/clothing/gloves/fingerless_leather
+			shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+			neck = /obj/item/clothing/neck/gorget
+			wrists = /obj/item/clothing/wrists/bracers/leather/heavy
+			mask = /obj/item/clothing/mask/ragmask/black
 			beltr = /obj/item/quiver/bolts
-			r_hand = /obj/item/rogueweapon/mace/cudgel //From thief PR
+			r_hand = /obj/item/weapon/mace/cudgel //From thief PR
 			backpack_contents = list(
-				/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+				/obj/item/storage/belt/pouch/coins/poor = 1,
 				/obj/item/lockpickring/mundane = 1,
 				/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 				/obj/item/rope/chain = 1,
 				/obj/item/storage/roguebag = 1,
-				/obj/item/ammo_casing/caseless/rogue/bolt/water = 3,
+				/obj/item/ammo_casing/caseless/bolt/water = 3,
 				)
 			H.adjust_skillrank(/datum/skill/misc/tracking, 5, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -66,34 +66,34 @@
 			switch(weapon_choice)
 				if("Rapier")
 					H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-					beltl = /obj/item/rogueweapon/sword/rapier
+					beltl = /obj/item/weapon/sword/rapier
 				if("Dagger")
 					H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-					beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special // Why were they spawning with an elven dagger in the first place??? Please LMK.
+					beltl = /obj/item/weapon/huntingknife/idagger/steel/special // Why were they spawning with an elven dagger in the first place??? Please LMK.
 				if ("Whip")
 					H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
-					beltl = /obj/item/rogueweapon/whip
+					beltl = /obj/item/weapon/whip
 			H.change_stat("perception", 1)
 			H.change_stat("endurance", 2)
 			H.change_stat("speed", 3)
 
 		if("Marauder")
 			to_chat(H, span_warning("You are a brigand and a pillager - you prefer to get your coins with direct means from unfortunate victims."))
-			head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
+			head = /obj/item/clothing/head/helmet/leather/volfhelm
+			pants = /obj/item/clothing/under/heavy_leather_pants
+			armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 			cloak = /obj/item/clothing/cloak/stabard/dungeon
-			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-			backl = /obj/item/storage/backpack/rogue/satchel
-			belt = /obj/item/storage/belt/rogue/leather
-			gloves = /obj/item/clothing/gloves/roguetown/angle
-			shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-			neck = /obj/item/clothing/neck/roguetown/gorget 
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-			mask = /obj/item/clothing/mask/rogue/ragmask/black
-			r_hand = /obj/item/rogueweapon/mace/cudgel //From thief PR
+			shirt = /obj/item/clothing/suit/armor/gambeson/heavy
+			backl = /obj/item/storage/backpack/satchel
+			belt = /obj/item/storage/belt/leather
+			gloves = /obj/item/clothing/gloves/angle
+			shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+			neck = /obj/item/clothing/neck/gorget
+			wrists = /obj/item/clothing/wrists/bracers/leather/heavy
+			mask = /obj/item/clothing/mask/ragmask/black
+			r_hand = /obj/item/weapon/mace/cudgel //From thief PR
 			backpack_contents = list(
-				/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+				/obj/item/storage/belt/pouch/coins/poor = 1,
 				/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 				/obj/item/rope/chain = 1,
 				/obj/item/storage/roguebag = 1,
@@ -121,20 +121,20 @@
 				if("Just An Iron Shield")
 					H.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-					backr = /obj/item/rogueweapon/shield/iron
+					backr = /obj/item/weapon/shield/iron
 				if("Dagger + Crossbow")
 					H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-					beltl = /obj/item/rogueweapon/huntingknife/idagger/steel 
+					beltl = /obj/item/weapon/huntingknife/idagger/steel
 					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 					beltr = /obj/item/quiver/bolts
 				if ("Militia Warpick + Heater Shield")
 					H.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
-					beltl = /obj/item/rogueweapon/pick/militia
-					backr = /obj/item/rogueweapon/shield/iron
+					beltl = /obj/item/weapon/pick/militia
+					backr = /obj/item/weapon/shield/iron
 				if ("Militia Spear + Heater Shield")
 					H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-					l_hand = /obj/item/rogueweapon/spear/militia
-					backr = /obj/item/rogueweapon/shield/heater
+					l_hand = /obj/item/weapon/spear/militia
+					backr = /obj/item/weapon/shield/heater
 			H.change_stat("constitution", 2)
 			H.change_stat("strength", 1)
 			H.change_stat("endurance", 1)
