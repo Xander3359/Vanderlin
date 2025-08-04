@@ -57,7 +57,7 @@
 	shirt = /obj/item/clothing/suit/armor/gambeson
 	gloves = /obj/item/clothing/gloves/chain
 	wrists = /obj/item/clothing/wrists/bracers
-	pants = /obj/item/clothing/under/chainlegs
+	pants = /obj/item/clothing/pants/chainlegs
 	shoes = /obj/item/clothing/shoes/boots
 	cloak = /obj/item/clothing/cloak/cape/crusader
 	backl = /obj/item/storage/backpack/satchel

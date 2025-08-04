@@ -10,8 +10,8 @@
 
 /datum/outfit/job/wretch/poacher/pre_equip(mob/living/carbon/human/H)
 	head = /obj/item/clothing/head/roguehood/darkgreen
-	mask = /obj/item/clothing/mask/wildguard
-	pants = /obj/item/clothing/under/heavy_leather_pants
+	mask = /obj/item/clothing/face/wildguard
+	pants = /obj/item/clothing/pants/heavy_leather_pants
 	armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/darkgreen
 	shirt = /obj/item/clothing/suit/armor/gambeson
@@ -19,7 +19,7 @@
 	belt = /obj/item/storage/belt/leather
 	neck = /obj/item/clothing/neck/gorget
 	gloves = /obj/item/clothing/gloves/fingerless_leather
-	shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	beltl = /obj/item/quiver/arrows
 	wrists = /obj/item/clothing/wrists/bracers/leather/heavy

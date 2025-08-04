@@ -10,11 +10,11 @@
 
 /datum/outfit/job/wretch/berserker/pre_equip(mob/living/carbon/human/H)
 	head = /obj/item/clothing/head/helmet/kettle
-	mask = /obj/item/clothing/mask/wildguard
+	mask = /obj/item/clothing/face/wildguard
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	wrists = /obj/item/clothing/wrists/bracers
-	pants = /obj/item/clothing/under/heavy_leather_pants
-	shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+	pants = /obj/item/clothing/pants/heavy_leather_pants
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	gloves = /obj/item/clothing/gloves/plate
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather

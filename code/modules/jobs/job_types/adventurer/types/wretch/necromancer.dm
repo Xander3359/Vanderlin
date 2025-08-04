@@ -12,8 +12,8 @@
 	H.mind.current.faction += "[H.name]_faction"
 	H.set_patron(/datum/patron/inhumen/zizo)
 	head = /obj/item/clothing/head/roguehood/black
-	shoes = /obj/item/clothing/shoes/boots/leather/reinforced
-	pants = /obj/item/clothing/under/heavy_leather_pants
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
+	pants = /obj/item/clothing/pants/heavy_leather_pants
 	wrists = /obj/item/clothing/wrists/bracers/leather/heavy
 	shirt = /obj/item/clothing/suit/armor/gambeson/heavy
 	armor = /obj/item/clothing/suit/shirt/robe/black

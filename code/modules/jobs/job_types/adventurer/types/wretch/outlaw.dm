@@ -21,7 +21,7 @@
 		if("Cutpurse")
 			to_chat(H, span_warning("You are the person folk fear at night - use your cunning and speed to strike fast and get out with your spoils before anyone notices."))
 			head = /obj/item/clothing/head/helmet/kettle
-			pants = /obj/item/clothing/under/heavy_leather_pants
+			pants = /obj/item/clothing/pants/heavy_leather_pants
 			armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 			cloak = /obj/item/clothing/cloak/raincloak/mortus
 			shirt = /obj/item/clothing/suit/armor/gambeson
@@ -29,7 +29,7 @@
 			backl = /obj/item/storage/backpack/satchel
 			belt = /obj/item/storage/belt/leather
 			gloves = /obj/item/clothing/gloves/fingerless_leather
-			shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+			shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 			neck = /obj/item/clothing/neck/gorget
 			wrists = /obj/item/clothing/wrists/bracers/leather/heavy
 			mask = /obj/item/clothing/mask/ragmask/black
@@ -80,14 +80,14 @@
 		if("Marauder")
 			to_chat(H, span_warning("You are a brigand and a pillager - you prefer to get your coins with direct means from unfortunate victims."))
 			head = /obj/item/clothing/head/helmet/leather/volfhelm
-			pants = /obj/item/clothing/under/heavy_leather_pants
+			pants = /obj/item/clothing/pants/heavy_leather_pants
 			armor = /obj/item/clothing/suit/armor/leather/heavy/coat
 			cloak = /obj/item/clothing/cloak/stabard/dungeon
 			shirt = /obj/item/clothing/suit/armor/gambeson/heavy
 			backl = /obj/item/storage/backpack/satchel
 			belt = /obj/item/storage/belt/leather
 			gloves = /obj/item/clothing/gloves/angle
-			shoes = /obj/item/clothing/shoes/boots/leather/reinforced
+			shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 			neck = /obj/item/clothing/neck/gorget
 			wrists = /obj/item/clothing/wrists/bracers/leather/heavy
 			mask = /obj/item/clothing/mask/ragmask/black

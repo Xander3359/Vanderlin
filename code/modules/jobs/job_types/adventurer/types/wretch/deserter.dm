@@ -108,7 +108,7 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
 			gloves = /obj/item/clothing/gloves/plate
-			pants = /obj/item/clothing/under/chainlegs
+			pants = /obj/item/clothing/pants/chainlegs
 			neck = /obj/item/clothing/neck/bevor
 			shirt = /obj/item/clothing/suit/armor/chainmail
 			wrists = /obj/item/clothing/wrists/bracers
@@ -181,7 +181,7 @@
 
 			shirt = /obj/item/clothing/suit/armor/gambeson
 			armor = /obj/item/clothing/suit/armor/chainmail/hauberk
-			pants = /obj/item/clothing/under/chainlegs
+			pants = /obj/item/clothing/pants/chainlegs
 			neck = /obj/item/clothing/neck/chaincoif
 			cloak = /obj/item/clothing/cloak/stabard/surcoat
 			wrists = /obj/item/clothing/wrists/bracers
@@ -207,7 +207,7 @@
 			var/masks = list(
 			"Steel Houndmask" 	= /obj/item/clothing/mask/facemask/steel/hound,
 			"Steel Mask"		= /obj/item/clothing/mask/facemask/steel,
-			"Wildguard"			= /obj/item/clothing/mask/wildguard,
+			"Wildguard"			= /obj/item/clothing/face/wildguard,
 			"None"
 			)
 			var/maskchoice = input("Choose your Mask.", "MASK MASK MASK") as anything in masks // Run from it. MASK. MASK. MASK.

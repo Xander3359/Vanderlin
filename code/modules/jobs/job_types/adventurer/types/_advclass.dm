@@ -10,6 +10,8 @@
 	var/maximum_possible_slots = 999
 	var/total_slots_occupied = 0
 	var/min_pq = -100
+
+	var/list/traits_applied
 	var/cmode_music
 
 	var/horse = FALSE
@@ -43,8 +45,8 @@
 			new horse(TU)
 	H.set_apprentice_name(apprentice_name)
 
-/*	for(var/trait in traits_applied)
-		ADD_TRAIT(H, trait, ADVENTURER_TRAIT) */
+	for(var/trait in traits_applied)
+		ADD_TRAIT(H, trait, ADVENTURER_TRAIT)
 
 	if(CTAG_TOWNER in category_tags)
 		for(var/mob/M in GLOB.billagerspawns)

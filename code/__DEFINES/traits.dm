@@ -457,3 +457,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_WIELDED "wielded"
 /// The items needs two hands to be carried
 #define TRAIT_NEEDS_TWO_HANDS "needstwohands"
+
+// XANTODO implement these traits
+#define TRAIT_OUTLANDER "Outlander"
+#define TRAIT_OUTLAW "Outlaw"
+#define TRAIT_HERESIARCH "Forbidden Knowledge" //allows entry to ascendant church

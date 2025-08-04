@@ -22,6 +22,24 @@
 		return
 	qdel(src)
 
+/obj/item/clothing/face/wildguard
+	name = "wild guard"
+	desc = "A mask shaped after the snarling beasts of Dendor."
+	icon_state = "wildguard"
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	max_integrity = 100
+	resistance_flags = FIRE_PROOF
+	armor = ARMOR_MASK_METAL
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/iron
+
 /obj/item/clothing/face/facemask
 	name = "iron mask"
 	icon_state = "imask"
